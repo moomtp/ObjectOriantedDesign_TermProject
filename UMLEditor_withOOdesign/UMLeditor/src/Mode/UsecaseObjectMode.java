@@ -1,4 +1,4 @@
 package Mode;
 
-public class UsecaseObjectMode {
+public class UsecaseObjectMode extends Mode {
 }

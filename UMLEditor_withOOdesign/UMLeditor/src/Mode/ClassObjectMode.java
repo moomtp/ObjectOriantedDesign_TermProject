@@ -1,4 +1,4 @@
 package Mode;
 
-public class ClassObjectMode {
+public class ClassObjectMode extends Mode {
 }

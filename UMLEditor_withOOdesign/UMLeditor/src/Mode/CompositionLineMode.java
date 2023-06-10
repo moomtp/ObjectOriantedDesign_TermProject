@@ -1,4 +1,4 @@
 package Mode;
 
-public class CompositionLineMode {
+public class CompositionLineMode extends Mode {
 }

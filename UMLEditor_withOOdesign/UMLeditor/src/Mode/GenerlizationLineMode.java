@@ -1,4 +1,4 @@
 package Mode;
 
-public class GenerlizationLineMode {
+public class GenerlizationLineMode extends Mode {
 }

@@ -1,4 +1,4 @@
 package Mode;
 
-public class SelectMode {
+public class SelectMode extends Mode{
 }

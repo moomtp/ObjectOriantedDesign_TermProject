@@ -29,9 +29,9 @@ public class MainFrame extends JFrame {
         this.add(btnPanel, BorderLayout.WEST);
         this.add(drwPanel, BorderLayout.CENTER);
 
-
-
         this.setVisible(true);
+
+
     }
 
 

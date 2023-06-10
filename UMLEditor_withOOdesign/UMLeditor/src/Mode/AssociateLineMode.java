@@ -1,4 +1,4 @@
 package Mode;
 
-public class AssociateLineMode {
+public class AssociateLineMode extends Mode {
 }
