@@ -1,4 +1,4 @@
-package UMLeditor;
+package UMLeditor.Singleton;
 import Mode.*;
 
 public class CurMode {

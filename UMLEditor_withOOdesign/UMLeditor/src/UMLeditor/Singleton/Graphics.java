@@ -1,4 +1,4 @@
-package UMLeditor;
+package UMLeditor.Singleton;
 import Object.BaseObject;
 
 import java.util.Vector;
