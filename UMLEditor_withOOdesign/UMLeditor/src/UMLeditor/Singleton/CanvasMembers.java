@@ -3,12 +3,12 @@ import Object.BaseObject;
 
 import java.util.Vector;
 
-public class Graphics {
+public class CanvasMembers {
     //     Singleton
     private static Vector<BaseObject> graphics;
 
 
-    private Graphics(){ }
+    private CanvasMembers(){ }
 
     public synchronized static Vector<BaseObject> getInstance(){
         if (graphics == null){

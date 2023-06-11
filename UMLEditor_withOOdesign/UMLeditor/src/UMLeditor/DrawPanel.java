@@ -1,6 +1,7 @@
 package UMLeditor;
 import Object.*;
 import Mode.Mode;
+import UMLeditor.Singleton.CanvasMembers;
 import UMLeditor.Singleton.CurMode;
 
 import javax.swing.*;
@@ -26,7 +27,7 @@ public class DrawPanel extends JPanel implements MouseListener , MouseMotionList
     protected void paintComponent(java.awt.Graphics g) {
         super.paintComponent(g);
 
-        for (BaseObject Obj : UMLeditor.Singleton.Graphics.getInstance()) {
+        for (BaseObject Obj : CanvasMembers.getInstance()) {
 
             Obj.draw(this.getGraphics());
 
