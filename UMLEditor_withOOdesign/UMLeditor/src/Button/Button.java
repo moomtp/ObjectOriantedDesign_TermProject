@@ -20,7 +20,7 @@ public class Button extends JButton implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand() == btnSerial.toString()){
             this.setBackground(Color.GRAY);
-            CurMode.setInstance(btnMode);
+            CurMode.setInstance(this.btnMode);
         }
         else this.setBackground(Color.WHITE);
 

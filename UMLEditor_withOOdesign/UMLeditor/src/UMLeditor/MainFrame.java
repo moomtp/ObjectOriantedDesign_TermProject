@@ -2,8 +2,6 @@ package UMLeditor;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import java.lang.Math;
 
 public class MainFrame extends JFrame {
     ButtonPanel btnPanel;

@@ -15,6 +15,7 @@ public class CurMode {
 
     public synchronized static void setInstance(Mode newMode){
         curMode = newMode;
+        System.out.println(curMode);
     }
 
 }
