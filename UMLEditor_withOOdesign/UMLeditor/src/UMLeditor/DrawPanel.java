@@ -11,9 +11,15 @@ import java.util.Vector;
 public class DrawPanel extends JPanel implements MouseListener , MouseMotionListener {
     Vector<BaseObject> graphics;
 
+
     DrawPanel(){
         this.setBackground(Color.WHITE);
+
         this.graphics = UMLeditor.Singleton.Graphics.getInstance();
+
+        this.addMouseListener(this);
+        this.addMouseMotionListener(this);
+
     }
     protected void paintComponent(java.awt.Graphics g) {
         super.paintComponent(g);
@@ -29,6 +35,7 @@ public class DrawPanel extends JPanel implements MouseListener , MouseMotionList
     @Override
     public void mouseClicked(MouseEvent e) {
 
+        paintComponent(this.getGraphics());
     }
 
     @Override

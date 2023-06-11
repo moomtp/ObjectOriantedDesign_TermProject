@@ -1,5 +1,6 @@
 package Button;
 import Mode.*;
+import UMLeditor.Singleton.CurMode;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,7 +20,7 @@ public class Button extends JButton implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand() == btnSerial.toString()){
             this.setBackground(Color.GRAY);
-            // TODO : change curMode
+            CurMode.setInstance(btnMode);
         }
         else this.setBackground(Color.WHITE);
 
