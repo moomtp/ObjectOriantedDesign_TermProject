@@ -12,6 +12,8 @@ public class Mode {
     ReleaseBehavior releaseBehavior = new ReleaseThenDonothing();
     ModeSerial modeSerial;
 
+    Point temPoint = new Point();
+
     public Mode() {}
 
     public void click(Point pos){ clickBehavior.click(pos, modeSerial); }

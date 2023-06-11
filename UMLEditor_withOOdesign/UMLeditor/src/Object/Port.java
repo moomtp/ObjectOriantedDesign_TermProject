@@ -13,7 +13,8 @@ public class Port {
         parentObj = parent;
     }
 
-    public void draw(){
+    public void draw(Graphics g){
+        g.drawRect(position.x - 5, position.y-5, 10, 10);
         // TODO: draw port
     }
     public void addNewLine(LineObject newLine){

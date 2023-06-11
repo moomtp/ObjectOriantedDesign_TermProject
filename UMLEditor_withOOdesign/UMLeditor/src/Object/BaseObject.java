@@ -6,6 +6,8 @@ public abstract class BaseObject  {
     Point curPos;
     Boolean isSelected = false;
     int depth;
+    int width = 0;
+    int height = 0;
 
     public BaseObject(Point p){
         curPos = p;
