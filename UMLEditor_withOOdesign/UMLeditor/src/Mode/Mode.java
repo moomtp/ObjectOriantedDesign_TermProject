@@ -11,14 +11,16 @@ public class Mode {
     PressBehavior pressBehavior = new PressThenDonothing();
     ReleaseBehavior releaseBehavior = new ReleaseThenDonothing();
     ModeSerial modeSerial;
+    boolean isObjectSelected = false;
 
-    Point temPoint = new Point();
+    Point pressPoint = new Point();
+
 
     public Mode() {}
 
     public void click(Point pos){ clickBehavior.click(pos, modeSerial); }
-    public void drag(Point pos){ dragBehavior.drag(pos); }
-    public void press(Point pos){ pressBehavior.press(pos); }
-    public void release(Point pos){ releaseBehavior.release(pos); }
+    public void drag(Point pos){ dragBehavior.drag(pressPoint, pos); }
+    public void press(Point pos){ isObjectSelected = pressBehavior.press(pos); }
+    public void release(Point pos){ releaseBehavior.release(pressPoint, pos); }
 
 }

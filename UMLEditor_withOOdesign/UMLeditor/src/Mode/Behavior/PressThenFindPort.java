@@ -4,7 +4,8 @@ import java.awt.*;
 
 public class PressThenFindPort implements PressBehavior {
     @Override
-    public void press(Point pos) {
+    public Boolean press(Point pos) {
 
+        return false;
     }
 }

@@ -4,6 +4,7 @@ import java.awt.*;
 
 public class ShapedObject extends BaseObject{
     Port[] ports;
+    Point clickPos;
 
 
     protected ShapedObject(Point p){
@@ -12,6 +13,15 @@ public class ShapedObject extends BaseObject{
     @Override
     public void draw(Graphics canvas) {
 
+    }
+    @Override
+    public boolean isInObject(Point pos){
+        if (pos.x > this.curPos.x && pos.x < (this.curPos.x + width) ){
+            if (pos.y > this.curPos.y && pos.y < (this.curPos.y + height) ){
+                return true;
+            }
+        }
+        return false;
     }
 
     //   =============   etc function    ===============

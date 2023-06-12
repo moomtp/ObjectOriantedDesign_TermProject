@@ -7,6 +7,8 @@ public class Port {
     ShapedObject parentObj;
     Vector<LineObject> connectedLines;
     Point position = new Point();
+    final int width = 10;
+    final int height = 10;
 
     public Port(Point pos, ShapedObject parent){
         position.setLocation(pos);
@@ -14,7 +16,7 @@ public class Port {
     }
 
     public void draw(Graphics g){
-        g.drawRect(position.x - 5, position.y-5, 10, 10);
+        g.fillRect(position.x - width/2, position.y-height/2, width, height);
         // TODO: draw port
     }
     public void addNewLine(LineObject newLine){
@@ -28,7 +30,11 @@ public class Port {
     }
 
     public boolean inInPort(Point p){
-        // TODO : judge if p in Port
+        if (p.x > this.position.x && p.x < (this.position.x + width) ){
+            if (p.y > this.position.y && p.y < (this.position.y + height) ){
+                return true;
+            }
+        }
         return false;
     }
 }

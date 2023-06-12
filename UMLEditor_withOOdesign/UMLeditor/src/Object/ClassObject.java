@@ -18,15 +18,7 @@ public class ClassObject extends ShapedObject{
         else {g.setColor(Color.BLACK);}
         g.drawRect(this.curPos.x, this.curPos.y, width, height);
     }
-    @Override
-    public boolean isInObject(Point pos){
-        if (pos.x > this.curPos.x && pos.x < (this.curPos.x + width) ){
-            if (pos.y > this.curPos.y && pos.y < (this.curPos.y + height) ){
-                return true;
-            }
-        }
-        return false;
-    }
+
 
 
     //  ==============   etc function    ================
