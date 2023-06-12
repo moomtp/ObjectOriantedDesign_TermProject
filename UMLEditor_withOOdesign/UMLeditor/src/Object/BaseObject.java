@@ -28,8 +28,8 @@ public abstract class BaseObject  {
     public Point getCurPos(){return this.curPos;}
     public void setCurPos(Point newPos){this.curPos.setLocation(newPos);}
     public void moveByOffset(Point fromPos, Point toPos){
-        int x_offset = fromPos.x - toPos.x;
-        int y_offset = fromPos.y - toPos.y;
+        int x_offset = toPos.x - fromPos.x;
+        int y_offset = toPos.y - fromPos.y;
 
         this.curPos.setLocation(curPos.x + x_offset , curPos.y + y_offset);
     }

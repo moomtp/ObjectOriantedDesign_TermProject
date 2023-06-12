@@ -19,6 +19,12 @@ public class ClassObject extends ShapedObject{
         g.drawRect(this.curPos.x, this.curPos.y, width, height);
     }
 
+    @Override
+    public void moveByOffset(Point fromPos, Point toPos){
+        super.moveByOffset(fromPos, toPos);
+        setPort();
+    }
+
 
 
     //  ==============   etc function    ================
