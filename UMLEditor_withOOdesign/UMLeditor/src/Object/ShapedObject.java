@@ -24,6 +24,15 @@ public class ShapedObject extends BaseObject{
         return false;
     }
 
+    public Port isInport(Point pos){
+        for(Port port : this.ports){
+            if(port.inInPort(pos)){return port;}
+        }
+
+        return null;
+
+    }
+
     //   =============   etc function    ===============
     protected void initPort(){
         this.ports =new Port[] {new Port(new Point(this.curPos.x + width/2, this.curPos.y), this),

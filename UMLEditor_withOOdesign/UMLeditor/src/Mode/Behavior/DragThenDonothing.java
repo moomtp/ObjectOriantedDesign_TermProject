@@ -5,7 +5,7 @@ import java.awt.*;
 public class DragThenDonothing implements DragBehavior {
 
     @Override
-    public void drag(Point pos, Point pressPos) {
+    public void drag(Point pos) {
 
     }
 }

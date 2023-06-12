@@ -1,6 +1,7 @@
 package Mode.Behavior;
 
-import UMLeditor.Singleton.CanvasMembers;
+import Mode.Mode;
+import UMLeditor.Singleton.*;
 import Object.BaseObject;
 
 import java.awt.*;
@@ -8,14 +9,14 @@ import java.util.Vector;
 
 public class ReleaseThenMoveObject implements ReleaseBehavior {
     @Override
-    public Boolean release(Point pressPos, Point pos) {
+    public void release(Point pos) {
         Vector<BaseObject> graphics = CanvasMembers.getInstance();
+        Mode curMode = CurMode.getInstance();
 
         for(BaseObject obj : graphics){
-            if(obj.isSelected()){obj.moveByOffset(pressPos, pos); }
+            if(obj.isSelected()){obj.moveByOffset(curMode.getPressPoint(), pos); }
             else obj.deselectObject();
         }
-        return false;
     }
 
 

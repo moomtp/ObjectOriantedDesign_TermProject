@@ -1,20 +1,29 @@
 package Mode.Behavior;
 
-import Mode.ModeSerial;
 import Object.BaseObject;
-import UMLeditor.Singleton.CanvasMembers;
+import Mode.Mode;
+import UMLeditor.Singleton.*;
 
 import java.awt.*;
 import java.util.Vector;
 
 public class ClickThenSelect implements ClickBehavior{
 
-    public void click(Point pos, ModeSerial modeSerial) {
+    public void click(Point pos) {
 
         Vector<BaseObject> graphics = CanvasMembers.getInstance();
+        Mode curMode = CurMode.getInstance();
+
+
         for(BaseObject obj : graphics){
-            if(obj.isInObject(pos)){obj.selectObject();}
+            if(obj.isInObject(pos)){
+                obj.selectObject();
+                curMode.setObjectSelectedState(true);
+                return;
+            }
             else obj.deselectObject();
         }
+        curMode.setObjectSelectedState(false);
+
     }
 }

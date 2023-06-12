@@ -12,18 +12,14 @@ public class SelectMode extends Mode{
         releaseBehavior = new ReleaseThenRangeSelect();
     }
 
-    @Override
-        public void press(Point pos){
-            this.pressPoint.setLocation(pos);
-            this.isObjectSelected = pressBehavior.press(pos);
-    }
+
     @Override
         public void release(Point pos){
             if(this.isObjectSelected){
-                new ReleaseThenMoveObject().release(this.pressPoint, pos);
+                new ReleaseThenMoveObject().release(pos);
             }
             else{
-                this.isObjectSelected = releaseBehavior.release(this.pressPoint, pos);
+                releaseBehavior.release(pos);
             }
     }
 }

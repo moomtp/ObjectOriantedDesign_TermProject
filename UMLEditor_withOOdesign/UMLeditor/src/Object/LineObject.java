@@ -3,6 +3,8 @@ package Object;
 import java.awt.*;
 
 public class LineObject extends BaseObject {
+    Port fromPort;
+    Port toPort;
     public LineObject(Point p) {
         super(p);
     }
