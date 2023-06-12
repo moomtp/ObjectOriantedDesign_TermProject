@@ -9,6 +9,7 @@ public class ShapedObject extends BaseObject{
 
     protected ShapedObject(Point p){
         super(p);
+
     }
     @Override
     public void draw(Graphics canvas) {
@@ -31,6 +32,12 @@ public class ShapedObject extends BaseObject{
 
         return null;
 
+    }
+    public void moveByOffset(Point fromPos, Point toPos){
+        int x_offset = toPos.x - fromPos.x;
+        int y_offset = toPos.y - fromPos.y;
+
+        this.curPos.setLocation(curPos.x + x_offset , curPos.y + y_offset);
     }
 
     //   =============   etc function    ===============

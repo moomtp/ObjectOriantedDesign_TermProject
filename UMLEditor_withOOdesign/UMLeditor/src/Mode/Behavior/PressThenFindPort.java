@@ -13,7 +13,14 @@ public class PressThenFindPort implements PressBehavior {
 
         Vector<BaseObject> graphics = CanvasMembers.getInstance();
         Mode curMode = CurMode.getInstance();
+        Port temPort;
 
-
+        for(BaseObject obj : graphics){
+            temPort = obj.isInport(pos);
+            if(temPort != null){
+                curMode.setPrePort(temPort);
+                return;
+            }
+        }
     }
 }

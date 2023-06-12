@@ -23,15 +23,15 @@ public class Port {
         connectedLines.addElement(newLine);
     }
     public Point getPosition(){
-        return position;
+        return this.position;
     }
     public void setPosition(Point p){
         this.position.setLocation(p);
     }
 
     public boolean inInPort(Point p){
-        if (p.x > this.position.x && p.x < (this.position.x + width) ){
-            if (p.y > this.position.y && p.y < (this.position.y + height) ){
+        if (p.x > this.position.x -5 && p.x < (this.position.x + width/2) ){
+            if (p.y > this.position.y-5 && p.y < (this.position.y + height/2) ){
                 return true;
             }
         }

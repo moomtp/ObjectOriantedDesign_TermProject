@@ -27,7 +27,27 @@ public class MenuPanel extends JMenuBar implements ActionListener  {
     }
     public void actionPerformed(ActionEvent e){
         if (e.getActionCommand()=="Rename"){}
-        if (e.getActionCommand() == "Group") {}
+        if (e.getActionCommand() == "Group") {
+
+
+            /*
+            // foreach object in canvasMember
+            // if obj.isSelected
+            // addMember(obj)
+            // init group frame
+            // push into canvas
+            BaseObject group = n ew groupObject();
+
+            // a group object who has parent group can't be selected
+            // some function have to be overrided :
+            // move , select, findPort, ungroup, draw
+
+
+
+
+             */
+
+        }
         if (e.getActionCommand() == "UnGroup"){}
     }
 

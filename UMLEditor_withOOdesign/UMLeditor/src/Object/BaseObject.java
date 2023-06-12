@@ -9,6 +9,7 @@ public abstract class BaseObject  {
     int width = 0;
     int height = 0;
     String name = "";
+    BaseObject groupedBy = null;
 
     public BaseObject(Point p){
         curPos = p;
@@ -35,6 +36,9 @@ public abstract class BaseObject  {
     }
 
 
-    //   ============    functions percolating up from group object   ============
+    //   ============    functions percolating up from group object and other   ============
+
+    public Port isInport(Point pos){return null;}
+    public void ungroup(){;}
 
 }

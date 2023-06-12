@@ -13,13 +13,7 @@ public class AssociateLineMode extends Mode {
         this.releaseBehavior = new ReleaseThenTryCreateLine();
     }
 
-    @Override
-    public void press(Point pos) {
 
-    }
 
-    @Override
-    public void release(Point pos){
 
-    }
 }
