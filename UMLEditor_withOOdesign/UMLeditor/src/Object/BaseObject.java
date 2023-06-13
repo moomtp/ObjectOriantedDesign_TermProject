@@ -1,8 +1,9 @@
 package Object;
+import UMLeditor.Singleton.*;
 
 import java.awt.*;
 
-public abstract class BaseObject  {
+public abstract class BaseObject implements Comparable<BaseObject> {
     Point curPos;
     Boolean isSelected = false;
     int depth;
@@ -13,13 +14,14 @@ public abstract class BaseObject  {
 
     public BaseObject(Point p){
         curPos = p;
+        Depth SingletonDepth = new Depth();
+        depth = SingletonDepth.getInstance();
     }
 
     abstract public void draw(java.awt.Graphics g);
 
-    public boolean isInObject(Point p){
-        // TODO : check is p in object, default is false
-        return false;
+    public int compareTo(BaseObject obj){
+        return obj.getDepth() - this.depth;
     }
 
     //   ==========  obj state function   ==========
@@ -34,10 +36,13 @@ public abstract class BaseObject  {
 
         this.curPos.setLocation(curPos.x + x_offset , curPos.y + y_offset);
     }
+    public BaseObject getParentGroup(){return this.groupedBy;}
+    public int getDepth(){return this.depth;}
 
 
     //   ============    functions percolating up from group object and other   ============
 
+    public boolean isInObject(Point p){ return false; }
     public Port isInport(Point pos){return null;}
     public void ungroup(){;}
 

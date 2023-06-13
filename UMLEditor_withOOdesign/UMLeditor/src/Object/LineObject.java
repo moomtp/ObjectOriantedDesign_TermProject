@@ -17,4 +17,6 @@ public class LineObject extends BaseObject {
         g.drawLine(fromPort.getPosition().x, fromPort.getPosition().y, toPort.getPosition().x, toPort.getPosition().y);
 
     }
+
+
 }

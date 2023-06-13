@@ -1,10 +1,13 @@
 package UMLeditor;
 
-import com.sun.tools.javac.Main;
+import Object.*;
+import UMLeditor.Singleton.CanvasMembers;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Vector;
 
 public class MenuPanel extends JMenuBar implements ActionListener  {
 
@@ -26,8 +29,17 @@ public class MenuPanel extends JMenuBar implements ActionListener  {
 
     }
     public void actionPerformed(ActionEvent e){
-        if (e.getActionCommand()=="Rename"){}
+        if (e.getActionCommand()=="Rename"){
+            Vector<BaseObject> graphics = CanvasMembers.getInstance();
+            System.out.println(graphics);
+
+        }
         if (e.getActionCommand() == "Group") {
+            GroupObject groupObject = new GroupObject(new Point(0,0));
+
+
+            Vector<BaseObject> graphics = CanvasMembers.getInstance();
+            graphics.addElement(groupObject);
 
 
             /*
@@ -41,14 +53,17 @@ public class MenuPanel extends JMenuBar implements ActionListener  {
             // a group object who has parent group can't be selected
             // some function have to be overrided :
             // move , select, findPort, ungroup, draw
-
-
-
-
              */
 
         }
-        if (e.getActionCommand() == "UnGroup"){}
+        if (e.getActionCommand() == "UnGroup"){
+
+            Vector<BaseObject> graphics = CanvasMembers.getInstance();
+            for(BaseObject obj : graphics){
+                if(obj.isSelected() == true) obj.ungroup();
+            }
+            System.out.println(graphics);
+        }
     }
 
 }

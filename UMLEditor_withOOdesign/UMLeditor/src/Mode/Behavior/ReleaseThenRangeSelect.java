@@ -22,7 +22,8 @@ public class ReleaseThenRangeSelect implements ReleaseBehavior {
         Vector<BaseObject> graphics = CanvasMembers.getInstance();
 
         for(BaseObject obj : graphics){
-            if(isInRange(leftUpPos, RightDownPos, obj.getCurPos())){
+            if(isInRange(leftUpPos, RightDownPos, obj.getCurPos()) &&
+                obj.getParentGroup() == null){
                 obj.selectObject();
                 isObjectSelected = true;
             }
