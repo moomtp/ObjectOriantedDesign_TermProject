@@ -15,5 +15,10 @@ public class ClassObject extends ShapedObject{
     }
 
 
+
+    public void paintComponent(Graphics g) {
+        g.drawRect(this.curPos.x, this.curPos.y, width, height);
+    }
+
     //  ==============   etc function    ================
 }

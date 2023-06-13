@@ -1,8 +1,8 @@
 package Object;
-
+import javax.swing.*;
 import java.awt.*;
 
-public abstract class BaseObject  {
+public abstract class BaseObject extends JComponent  {
     Point curPos;
     Boolean isSelected = false;
     int depth;
@@ -16,6 +16,8 @@ public abstract class BaseObject  {
     public boolean isInObject(Point p){
         // TODO : check is p in object, default is false
         return false;
+    }
+    public void paintComponent(Graphics g) {
     }
 
     //   ==========  obj state function   ==========

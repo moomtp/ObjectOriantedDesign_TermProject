@@ -8,5 +8,6 @@ public class ClickThenDonothing implements ClickBehavior{
 
     public void click(Point pos, ModeSerial modeSerial) {
 
+        UMLeditor.Singleton.Canvas.repaintComponent();
     }
 }

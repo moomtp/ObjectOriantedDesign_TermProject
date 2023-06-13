@@ -13,7 +13,7 @@ public class ClickThenCreate implements ClickBehavior {
         Vector<BaseObject> graphics = UMLeditor.Singleton.Graphics.getInstance();
         graphics.addElement(objectFactory.createObject(modeSerial, pos));
 
-        UMLeditor.Singleton.Canvas.repaintComponent();
+        // UMLeditor.Singleton.Canvas.repaintComponent();
 
 
     }

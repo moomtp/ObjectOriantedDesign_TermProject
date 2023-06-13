@@ -25,14 +25,22 @@ public class DrawPanel extends JPanel implements MouseListener , MouseMotionList
         
         UMLeditor.Singleton.Canvas.setInstance(this);
     }
-    protected void paintComponent(java.awt.Graphics g) {
-        super.paintComponent(g);
+    // protected void paintComponent(java.awt.Graphics g) {
+    //     super.paintComponent(g);
 
+    //     for (BaseObject Obj : UMLeditor.Singleton.Graphics.getInstance()) {
+
+    //         Obj.draw(this.getGraphics());
+
+    //     }
+    // }
+    public void repaint(){
         for (BaseObject Obj : UMLeditor.Singleton.Graphics.getInstance()) {
 
             Obj.draw(this.getGraphics());
 
         }
+
     }
 
 
@@ -41,26 +49,26 @@ public class DrawPanel extends JPanel implements MouseListener , MouseMotionList
     public void mouseClicked(MouseEvent e) {
         CurMode.getInstance().click(e.getPoint());
 
+        repaint();
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
         CurMode.getInstance().press(e.getPoint());
 
-        paintComponent(this.getGraphics());
+
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
         CurMode.getInstance().release(e.getPoint());
 
-        paintComponent(this.getGraphics());
     }
     @Override
     public void mouseDragged(MouseEvent e) {
         CurMode.getInstance().drag(e.getPoint());
 
-        paintComponent(this.getGraphics());
+
     }
 
     @Override

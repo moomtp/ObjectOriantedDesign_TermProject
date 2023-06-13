@@ -28,7 +28,7 @@ public class Canvas {
     }
 
     public synchronized static void repaintComponent(){
-        canvas.repaint();
+        // canvas.repaint();
     }
 
 }
