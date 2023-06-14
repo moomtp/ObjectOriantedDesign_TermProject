@@ -29,9 +29,21 @@ public class MenuPanel extends JMenuBar implements ActionListener  {
 
     }
     public void actionPerformed(ActionEvent e){
-        if (e.getActionCommand()=="Rename"){
-            Vector<BaseObject> graphics = CanvasMembers.getInstance();
-            System.out.println(graphics);
+        if (e.getActionCommand() == "Rename"){
+            JFrame f = new JFrame("New Object Name");
+            f.setSize(400,300);
+            String input = JOptionPane.showInputDialog("New name : ");
+
+           if(input != null){
+               Vector<BaseObject> graphics = CanvasMembers.getInstance();
+               System.out.println(graphics);
+
+               for(BaseObject obj : graphics){
+                   if(obj.isSelected()){
+                       obj.setName(input);
+                   }
+               }
+           }
 
         }
         if (e.getActionCommand() == "Group") {
@@ -41,20 +53,6 @@ public class MenuPanel extends JMenuBar implements ActionListener  {
             Vector<BaseObject> graphics = CanvasMembers.getInstance();
             graphics.addElement(groupObject);
 
-
-            /*
-            // foreach object in canvasMember
-            // if obj.isSelected
-            // addMember(obj)
-            // init group frame
-            // push into canvas
-            BaseObject group = n ew groupObject();
-
-            // a group object who has parent group can't be selected
-            // some function have to be overrided :
-            // move , select, findPort, ungroup, draw
-             */
-
         }
         if (e.getActionCommand() == "UnGroup"){
 
@@ -62,7 +60,6 @@ public class MenuPanel extends JMenuBar implements ActionListener  {
             for(BaseObject obj : graphics){
                 if(obj.isSelected() == true) obj.ungroup();
             }
-            System.out.println(graphics);
         }
     }
 

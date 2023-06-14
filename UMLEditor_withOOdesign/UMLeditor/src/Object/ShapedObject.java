@@ -13,7 +13,6 @@ public class ShapedObject extends BaseObject{
     }
     @Override
     public void draw(Graphics canvas) {
-
     }
     @Override
     public boolean isInObject(Point pos){
@@ -53,5 +52,11 @@ public class ShapedObject extends BaseObject{
         this.ports[2].setPosition(new Point(this.curPos.x + width, this.curPos.y + height/2));
         this.ports[3].setPosition(new Point(this.curPos.x+ width/2, this.curPos.y + height));
 
+    }
+
+    protected int calStringOffset(String nameString){
+        int stringLen = nameString.length();
+        int wordLen = 6;
+        return (stringLen * wordLen) / 2;
     }
 }

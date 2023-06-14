@@ -1,5 +1,6 @@
 package Object;
 
+import javax.sound.sampled.Line;
 import java.awt.*;
 
 public class LineObject extends BaseObject {
@@ -11,12 +12,20 @@ public class LineObject extends BaseObject {
         this.toPort = tPort;
 
     }
+    // used for decorator
+    public LineObject(LineObject lineObject) {
+        super(lineObject.getCurPos());
+        this.fromPort = lineObject.fromPort;
+        this.toPort = lineObject.toPort;
+    }
 
     @Override
     public void draw(Graphics g) {
-        g.drawLine(fromPort.getPosition().x, fromPort.getPosition().y, toPort.getPosition().x, toPort.getPosition().y);
 
     }
+    // ==========  state function  ===========
+    public Port getFromPort(){return fromPort;}
+    public Port getToPort(){return toPort;}
 
 
 }
