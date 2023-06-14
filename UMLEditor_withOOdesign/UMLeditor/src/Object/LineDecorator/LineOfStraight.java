@@ -1,22 +1,21 @@
 package Object.LineDecorator;
 
 
-import Object.BaseObject;
+import Object.Port;
 import Object.LineObject;
 
 import java.awt.*;
 
-public abstract class LineOfStraight extends LineObject {
+public class LineOfStraight extends LineObject {
     LineObject innerLineObj;
-    public LineOfStraight(LineObject newLine ){
-        super(newLine);
-        innerLineObj = newLine;
+
+    public LineOfStraight(Port fPort, Port tPort) {
+        super(fPort , tPort);
     }
 
 
     @Override
     public void draw(Graphics g){
-        innerLineObj.draw(g);
         g.drawLine(this.getFromPort().getPosition().x, this.getFromPort().getPosition().y, this.getToPort().getPosition().x, this.getToPort().getPosition().y);
     };
 

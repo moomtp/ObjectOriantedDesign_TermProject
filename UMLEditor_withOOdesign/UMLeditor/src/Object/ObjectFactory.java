@@ -2,6 +2,7 @@ package Object;
 
 import Button.Button;
 import Mode.ModeSerial;
+import Object.LineDecorator.*;
 
 import javax.sound.sampled.Line;
 import javax.swing.*;
@@ -27,11 +28,11 @@ public class ObjectFactory {
     public LineObject createLineObject(ModeSerial num, Port fPort, Port tPort){
         switch(num) {
             case assLINE:
-                return new AssociationLine(fPort, tPort);
+                return new ArrowOfAssociation(new LineOfStraight(fPort, tPort));
             case genLINE:
-                return new GenerlizationLine(fPort, tPort);
+                return new ArrowOfGenerlization(new LineOfStraight(fPort, tPort));
             case comLINE:
-                return new CompositionLine(fPort, tPort);
+                return new ArrowOfComposition(new LineOfBroken(fPort, tPort));
             default:
                 return null;
         }

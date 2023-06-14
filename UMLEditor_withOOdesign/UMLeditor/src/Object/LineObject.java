@@ -3,9 +3,9 @@ package Object;
 import javax.sound.sampled.Line;
 import java.awt.*;
 
-public class LineObject extends BaseObject {
-    Port fromPort;
-    Port toPort;
+public abstract class LineObject extends BaseObject {
+    protected Port fromPort;
+    protected Port toPort;
     public LineObject(Port fPort, Port tPort) {
         super(fPort.getPosition());
         this.fromPort = fPort;
@@ -19,10 +19,7 @@ public class LineObject extends BaseObject {
         this.toPort = lineObject.toPort;
     }
 
-    @Override
-    public void draw(Graphics g) {
 
-    }
     // ==========  state function  ===========
     public Port getFromPort(){return fromPort;}
     public Port getToPort(){return toPort;}
